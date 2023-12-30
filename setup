@@ -1,0 +1,22 @@
+1. Rom:
+
+2. Boot Rom: breed web, pbboot
+
+3. Cài đặt ban đầu:
+- Đổi IP Lan router:
+
+- Cài đặt opkg update:
+  Fix lỗi OpenWRT opkg Failed to send request: Operation not permitted:
+  Dùng ping 1.1.1.1 thử kiểm tra xem có kết quả không: 
+  Mở giao diện web LuCI, đi đến Network/Interfaces và chọn edit interface Lan đang sử dụng. Thiết lập Use custom DNS servers to:
+  1.1.1.1
+  1.0.0.1
+  Nhấn vào Save & Apply!
+  Sau đó vào gõ lại opkg update để kiểm tra kết quả
+  Tham khảo tại: https://techoverflow.net/2020/12/24/how-to-fix-openwrt-opkg-failed-to-send-request-operation-not-permitted/
+4. Cài đặt DDNS:
+
+5. Cài đặt Passwall2
+
+6. Cài đặt Adguardhome, nextDNS
+
