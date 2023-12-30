@@ -4,6 +4,14 @@
 
 3. Cài đặt ban đầu:
 - Đổi IP Lan router:
+  + SSH vào router
+  + gõ vào lệnh: vi /etc/config/network
+  + nhấn chữ "i" để bật edit mode
+  + Chỉnh sửa Ip lan tại dòng: option ipaddr 192.168.1.1
+  + Nhấn “Esc” , gỡ vào :wq sau đó Enter
+  + Có thể gõ lệnh reboot hoặc  /etc/init.d/network restart
+Tham khảo tại: https://openwrt.org/faq/change_lan_ip
+https://www.jwtechtips.top/edit-openwrt-lan-ip-address/
 
 - Cài đặt opkg update:
   Fix lỗi OpenWRT opkg Failed to send request: Operation not permitted:
