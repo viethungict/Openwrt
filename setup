@@ -23,6 +23,29 @@ https://www.jwtechtips.top/edit-openwrt-lan-ip-address/
   Sau đó vào gõ lại opkg update để kiểm tra kết quả
   Tham khảo tại: https://techoverflow.net/2020/12/24/how-to-fix-openwrt-opkg-failed-to-send-request-operation-not-permitted/
 4. Cài đặt DDNS:
+- Các bạn vào System > Software  tìm  gói  ddns-scripts và ấn  vào nút install để cài đặt
+- Truy cập  vào  SSH của OpenWrt  và thêm  vào file  /etc/config/ddns với  nội  dung  như bên  dưới:
+config service "duckdns"
+    option enabled '1'
+    option domain 'kenhtaymay.duckdns.org'
+    option username 'kenhtaymay'
+    option password 'a7c4d0ad-114e-40ef-ba1d-d217904a50f2'
+    option force_interval '72'
+    option force_unit 'hours'
+    option check_interval '10'
+    option check_unit 'minutes'
+    option ip_source 'network'
+    option ip_network 'wana'
+    option update_url 'http://www.duckdns.org/update?domains=[USERNAME]&token=[PASSWORD]&ip=[IP]'
+    option lookup_host 'kenhtaymay.duckdns.org'
+
+Trong đó 
+domain: các  bạn  sử  lại  thành  tên  miền  mới  đăng ký phía trên
+username: là  tên  miền  mới  đăng  ký  bỏ  đi phần đuôi ddns
+password: là  token  có  được  ở  bước  trên
+ip_network: là  tên interface  mà các bạn cập  nhật ip của nó (xem ở  Network > Interface)
+Vậy  là xong rồi đó, giờ  khởi  động lại router (nếu vẫn còn trong SSH thì chỉ cần gõ /etc/init.d/ddns restart  là khới động lại ddns-scripts  nhé) là rồi  nhé. 
+Theo  cài  đặt  bên  trên  thì  cứ  10 phút  nó  sẽ  tự  cập  nhật  IP  của  cổng  wana  lên  duckdns vào  tên miền kenhtaymay.duckdns.org.
 
 5. Cài đặt Passwall2
 
