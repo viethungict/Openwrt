@@ -20,6 +20,7 @@ https://www.jwtechtips.top/edit-openwrt-lan-ip-address/
   1.1.1.1
   1.0.0.1
   Nhấn vào Save & Apply!
+  Kiểm tra mặc định Default Gateway: 192.168.1.1 cùng dải ip với modem không?
   Sau đó vào gõ lại opkg update để kiểm tra kết quả
   Tham khảo tại: https://techoverflow.net/2020/12/24/how-to-fix-openwrt-opkg-failed-to-send-request-operation-not-permitted/
 4. Cài đặt DDNS:
